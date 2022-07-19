@@ -1,0 +1,34 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/ubuntu
+{
+	"name": "Blender-Builder",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			// CHANGE THEESE TO YOUR LIKING
+			"APT_PROXY": "http://172.17.0.1:3142",
+			"USER": "simtron",
+			"GIT_USER": "iamsimtron",
+			"GIT_EMAIL": "simha.gemaraju@outlook.com"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.cpptools-themes",
+				"vadimcn.vscode-lldb",
+				"rust-lang.rust-analyzer",
+				"ms-python.python",
+				"ms-vscode.cmake-tools",
+				"ms-vscode.makefile-tools"
+			]
+		}
+	},
+
+	"initializeCommand": "git submodule foreach --recursive git pull origin master --rebase",
+
+	"containerEnv": {
+		"DISPLAY": "172.28.229.213:0.0"
+	}
+}
