@@ -19,3 +19,9 @@ You are expected to install [Remote Containers](https://marketplace.visualstudio
 
 
 If running for the first time, the VSCode would take significant time to build the container image before starting the workspace. You are encouraged to check the logs to see if all goes well / if it is stuck on something. If all goes well, you'd be back in vscode IDE with same folder opened - except inside the container.
+
+## Some highlights
+---
+Blender GUI with IDE debugger attached inside devcontainer with Windows' `vscxsrv` for X-server on Windows.
+![Debugging blender](snapshot/blender-gdb-breakpoint.png "Debugging blender")
+![Debugging blender GUI from docker](snapshot/debugging-blender-gui-inside-docker-on-windows-host.png "Debugging blender GUI")

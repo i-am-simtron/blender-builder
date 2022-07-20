@@ -39,10 +39,19 @@ RUN apt install -y build-essential git \
     python3.10-dev cython3 libx11-dev \
     libxxf86vm-dev libxcursor-dev libxi-dev \
     libxrandr-dev libxinerama-dev libglew-dev \
-    wget curl nano
+    wget curl nano libasound2-dev libsoundio-dev\
+    portaudio19-dev libpulse-dev wayland-scanner++ \
+    help2man libwayland-dev libwayland-bin \
+    wayland-protocols libegl-dev libxkbcommon-dev \
+    libdbus-1-dev linux-libc-dev
 
-RUN wget https://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz && gunzip ./automake-1.15.tar.gz && tar -xvf ./automake-1.15.tar
-RUN cd automake-1.15 && ./configure && make -j12 && make install & cd ..
+RUN wget https://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz && \
+    gunzip ./automake-1.15.tar.gz && \
+    tar -xvf ./automake-1.15.tar && \
+    cd automake-1.15 && \
+    ./configure && \
+    make -j12 && \
+    make install && cd ..
 
 USER $USER
 

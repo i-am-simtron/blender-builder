@@ -29,6 +29,13 @@
 	// "initializeCommand": "git submodule foreach --recursive git pull origin master --rebase",
 
 	"containerEnv": {
-		"DISPLAY": "172.28.229.213:0.0"
-	}
+		"DISPLAY": "172.28.224.1:0.0"
+	},
+
+	"runArgs": [
+		"--net=host",
+		"--cap-add=SYS_PTRACE",
+		"--security-opt", 
+		"seccomp=unconfined"
+	]
 }
